@@ -54,7 +54,7 @@ const router = createHashRouter([
     element: <Layout />,
     errorElement: <RootErrorBoundary />,
     children: [
-      { path: '/', element: <LandingPage /> },
+      { index: true, element: <LandingPage /> },
       { path: '/getting-started', element: <GettingStarted /> },
       { path: '/api-reference', element: <ApiReference /> },
       { path: '/diagnostics', element: <Diagnostics /> },
