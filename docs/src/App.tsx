@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { createBrowserRouter, RouterProvider, Outlet, useRouteError, isRouteErrorResponse } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Outlet, useRouteError, isRouteErrorResponse } from 'react-router-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 
@@ -48,7 +48,7 @@ const Layout: React.FC = () => {
   );
 };
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
