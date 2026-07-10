@@ -37,15 +37,15 @@
     "env",
     "debugging"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "sarthak03dot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/your-repo.git"
+    "url": "https://github.com/sarthak03dot/backend-doctor.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/your-repo/issues"
+    "url": "https://github.com/sarthak03dot/backend-doctor/issues"
   },
-  "homepage": "https://github.com/your-username/your-repo#readme",
+  "homepage": "https://github.com/sarthak03dot/backend-doctor#readme",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^5.0.6",
