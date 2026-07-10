@@ -60,7 +60,7 @@ const router = createHashRouter([
       { path: '/diagnostics', element: <Diagnostics /> },
     ]
   }
-], { basename: import.meta.env.BASE_URL });
+]);
 
 const App: React.FC = () => {
   return <RouterProvider router={router} />;
