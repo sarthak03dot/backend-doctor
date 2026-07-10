@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Menu, X, Package, Syringe } from 'lucide-react';
+import { Terminal, Menu, X, Syringe } from 'lucide-react';
 
-import { GithubIcon } from './icons';
+import { GithubIcon, NpmIcon } from './icons';
 import { Link } from 'react-router-dom';
 import SearchModal from './SearchModal';
 
@@ -66,11 +66,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, justifyContent: 'flex-end' }}>
-        <a href="https://www.npmjs.com/package/backend-doctor" target="_blank" rel="noreferrer" className="icon-button" title="NPM">
-          <Package size={20} />
+        <a href="https://www.npmjs.com/package/@sarthak03dot/backend-doctor" target="_blank" rel="noreferrer" className="icon-button" title="NPM">
+          <NpmIcon size={24} color="#cb3837" />
         </a>
-        <a href="https://github.com/your-username/backend-doctor" target="_blank" rel="noreferrer" className="icon-button" title="GitHub">
-          <GithubIcon size={20} />
+        <a href="https://github.com/sarthak03dot/backend-doctor" target="_blank" rel="noreferrer" className="icon-button" title="GitHub">
+          <GithubIcon size={22} />
         </a>
       </div>
       

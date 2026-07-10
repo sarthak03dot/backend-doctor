@@ -1,12 +1,12 @@
 {
-  "name": "backend-doctor",
-  "version": "1.0.0",
+  "name": "@sarthak03dot/backend-doctor",
+  "version": "1.1.0",
   "description": "A diagnostic and debugging tool for Node.js backends.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "backend-doctor": "./dist/bin.js"
+    "backend-doctor": "dist/bin.js"
   },
   "exports": {
     ".": {
@@ -40,7 +40,7 @@
   "author": "sarthak03dot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sarthak03dot/backend-doctor.git"
+    "url": "git+https://github.com/sarthak03dot/backend-doctor.git"
   },
   "bugs": {
     "url": "https://github.com/sarthak03dot/backend-doctor/issues"

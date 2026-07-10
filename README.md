@@ -1,6 +1,11 @@
 # Backend Doctor 🩺 
 
+[![NPM Version](https://img.shields.io/npm/v/@sarthak03dot/backend-doctor?color=cb3837&logo=npm)](https://www.npmjs.com/package/@sarthak03dot/backend-doctor)
+[![Documentation](https://img.shields.io/badge/docs-live-blue.svg?logo=react)](https://sarthak03dot.github.io/backend-doctor)
+
 **The absolute ultimate startup diagnostic tool for Node.js backends.**
+
+👉 **[View Live Documentation](https://sarthak03dot.github.io/backend-doctor)**
 
 Catch environment mismatches, bad CORS setups, silent database timeouts, DNS resolution failures, out-of-disk-space errors, and lockfile conflicts *before* they consume hours of your debugging time in production.
 
@@ -10,7 +15,7 @@ Every day, developers lose hours debugging why a backend that "worked locally" i
 ## Installation
 
 ```bash
-npm install backend-doctor
+npm install @sarthak03dot/backend-doctor
 ```
 
 ## Quick Start
@@ -18,7 +23,7 @@ npm install backend-doctor
 ### 1. Zero-Code CLI
 You can run a battery of ecosystem, filesystem, and dependency checks without writing any code:
 ```bash
-npx backend-doctor
+npx @sarthak03dot/backend-doctor
 ```
 
 ### 2. Programmatic Usage
@@ -26,7 +31,7 @@ Import and run the diagnostics *before* you start your Express/Fastify server to
 
 ```typescript
 import express from 'express';
-import { runDiagnostics, slowQueryProfiler, api, rateLimiter } from 'backend-doctor';
+import { runDiagnostics, slowQueryProfiler, api, rateLimiter } from '@sarthak03dot/backend-doctor';
 
 async function bootstrap() {
   // 1. Run the ultimate diagnostics
@@ -91,7 +96,7 @@ This is the core of the library. Call this asynchronously before starting your s
 Stop reinventing the JSON response format in every project. Use the `api` utility to enforce a strict, predictable response structure.
 
 ```typescript
-import { api } from 'backend-doctor';
+import { api } from '@sarthak03dot/backend-doctor';
 
 // Success Response
 res.json(api.success({ id: 123 }, 'User created successfully'));
@@ -107,14 +112,14 @@ res.json(api.error('Validation failed', { code: 400, field: 'email' }));
 **Slow Query Profiler:**
 Logs a warning in the console if a request takes longer than the specified threshold.
 ```typescript
-import { slowQueryProfiler } from 'backend-doctor';
+import { slowQueryProfiler } from '@sarthak03dot/backend-doctor';
 app.use(slowQueryProfiler(500)); // Threshold in milliseconds
 ```
 
 **Rate Limiter:**
 A simple, in-memory rate limiter to protect your endpoints from brute force attacks.
 ```typescript
-import { rateLimiter } from 'backend-doctor';
+import { rateLimiter } from '@sarthak03dot/backend-doctor';
 // Allow maximum 5 requests per minute per IP
 app.use('/login', rateLimiter({ maxRequests: 5, windowMs: 60000 }));
 ```
@@ -122,14 +127,14 @@ app.use('/login', rateLimiter({ maxRequests: 5, windowMs: 60000 }));
 **Uptime & Healthcheck:**
 Instantly add a `/health` endpoint that returns your app's uptime.
 ```typescript
-import { uptimeDoctorMiddleware } from 'backend-doctor';
+import { uptimeDoctorMiddleware } from '@sarthak03dot/backend-doctor';
 app.use(uptimeDoctorMiddleware);
 ```
 
 **API Logger:**
 Logs every incoming request with IP, country, OS, browser, method, URL, status code, and response time.
 ```typescript
-import { apiLogger } from 'backend-doctor';
+import { apiLogger } from '@sarthak03dot/backend-doctor';
 app.use(apiLogger());
 ```
 
