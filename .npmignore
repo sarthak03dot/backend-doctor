@@ -1,0 +1,21 @@
+# Ignore everything except what we explicitly need
+# (NPM will still include package.json, README.md, LICENSE, and whatever is in 'files' in package.json)
+
+# Source code and configs
+src/
+tests/
+examples/
+docs/
+.github/
+tsconfig.json
+vitest.config.ts
+tsup.config.ts
+
+# Misc files
+.gitignore
+.eslintrc*
+.prettierrc*
+.DS_Store
+
+# Ignore dependencies just in case
+node_modules/

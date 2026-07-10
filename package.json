@@ -1,0 +1,65 @@
+{
+  "name": "backend-doctor",
+  "version": "1.0.0",
+  "description": "A diagnostic and debugging tool for Node.js backends.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "backend-doctor": "./dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/bin.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts src/bin.ts --format cjs,esm --dts --watch",
+    "test": "vitest run",
+    "demo": "cross-env NODE_ENV=development tsx examples/express-demo.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "diagnostic",
+    "express",
+    "backend",
+    "doctor",
+    "cors",
+    "env",
+    "debugging"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/your-repo/issues"
+  },
+  "homepage": "https://github.com/your-username/your-repo#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.0.0",
+    "@types/ua-parser-js": "^0.7.39",
+    "cross-env": "^10.1.0",
+    "express": "^5.2.1",
+    "tsup": "^8.0.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1",
+    "ua-parser-js": "^2.0.10"
+  }
+}
