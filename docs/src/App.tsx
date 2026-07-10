@@ -25,7 +25,7 @@ const RootErrorBoundary: React.FC = () => {
       <AlertTriangle size={64} color="#ef4444" style={{ marginBottom: '1.5rem' }} />
       <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Oops! Something went wrong.</h1>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>{errorMessage}</p>
-      <a href="/" className="button-primary">Return to Home</a>
+      <a href={import.meta.env.BASE_URL} className="button-primary">Return to Home</a>
     </div>
   );
 };
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       { path: '/diagnostics', element: <Diagnostics /> },
     ]
   }
-]);
+], { basename: import.meta.env.BASE_URL });
 
 const App: React.FC = () => {
   return <RouterProvider router={router} />;
