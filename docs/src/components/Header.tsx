@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   }, []);
   return (
     <header className="header">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flex: 1 }}>
+      <div className="header-left" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flex: 1 }}>
         <button 
           onClick={toggleSidebar} 
           className="icon-button"
@@ -35,11 +35,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         </button>
         <Link to="/" className="logo-text">
           <Syringe size={26} color="#3b82f6" />
-          Backend Doctor
+          <span className="logo-title">Backend Doctor</span>
         </Link>
       </div>
       
-      <div style={{ display: 'flex', justifyContent: 'center', flex: 1 }}>
+      <div className="header-center" style={{ display: 'flex', justifyContent: 'center', flex: 1 }}>
         <div style={{ position: 'relative', width: '100%', maxWidth: '300px' }}>
           <Terminal size={16} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#a1a1aa' }} />
           <input 
@@ -47,6 +47,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
             placeholder="Search docs... (Ctrl+K)" 
             onClick={() => setIsSearchOpen(true)}
             readOnly
+            className="search-input"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid var(--border-color)',
@@ -65,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         </div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, justifyContent: 'flex-end' }}>
+      <div className="header-right" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1, justifyContent: 'flex-end' }}>
         <a href="https://www.npmjs.com/package/@sarthak03dot/backend-doctor" target="_blank" rel="noreferrer" className="icon-button" title="NPM">
           <NpmIcon size={24} color="#cb3837" />
         </a>
