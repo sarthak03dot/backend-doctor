@@ -93,7 +93,7 @@ const LandingPage: React.FC = () => {
           <Link to="/getting-started" className="button-primary gsap-hero-btn" style={{ opacity: 0 }}>
             Get Started
           </Link>
-          <a href="https://github.com/your-username/backend-doctor" target="_blank" rel="noreferrer" className="button-primary gsap-hero-btn" style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-primary)', border: '1px solid var(--border-color)', backdropFilter: 'blur(10px)', opacity: 0 }}>
+          <a href="https://github.com/sarthak03dot/backend-doctor" target="_blank" rel="noreferrer" className="button-primary gsap-hero-btn" style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--text-primary)', border: '1px solid var(--border-color)', backdropFilter: 'blur(10px)', opacity: 0 }}>
             View GitHub
           </a>
         </div>

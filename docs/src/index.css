@@ -95,6 +95,7 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 /* Buttons */
@@ -626,6 +627,82 @@ pre::-webkit-scrollbar-track {
 .main-content {
   max-width: none !important;
   margin: 0 !important;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+  
+  .header-center {
+    display: none !important;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 30;
+  }
+
+  .sidebar {
+    position: fixed;
+    z-index: 40;
+    background-color: var(--bg-secondary);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+    height: calc(100vh - 64px);
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .typing-terminal {
+    width: 95%;
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .pagination-container {
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+  }
+  
+  .pagination-card {
+    padding: 0.75rem !important;
+  }
+  
+  .pagination-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .pagination-label {
+    font-size: 0.75rem !important;
+  }
 }
 
 /* ----- ADVANCED LANDING PAGE STYLES ----- */

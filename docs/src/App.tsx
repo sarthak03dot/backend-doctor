@@ -31,13 +31,26 @@ const RootErrorBoundary: React.FC = () => {
 };
 
 const Layout: React.FC = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsSidebarOpen(window.innerWidth > 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="app-container" style={{ flexDirection: 'column' }}>
       <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} isSidebarOpen={isSidebarOpen} />
       <div style={{ display: 'flex', flex: 1, minHeight: 'calc(100vh - 64px)' }}>
-        <Sidebar isOpen={isSidebarOpen} />
+        {/* Mobile Backdrop overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="sidebar-backdrop" 
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+        <Sidebar isOpen={isSidebarOpen} closeSidebar={() => setIsSidebarOpen(false)} />
         <main className="main-content" style={{ flex: 1, minWidth: 0, transition: 'all 0.3s ease' }}>
           <Suspense fallback={<div style={{ padding: '4rem 2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>Loading content...</div>}>
             <Outlet />
